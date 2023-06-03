@@ -86,6 +86,27 @@ async def read_item(request: Request, id: str):
 @app.get('/')
 async def index():
     # print()
+    # json = openai.Completion.create(
+    # model="text-davinci-002",
+    # prompt="The net worth of the richest footballer",
+    # max_tokens=6,
+    # temperature=0
+    #     )
+
+    # # print(response['detail'])
+    # return {
+    #     # "detail":"ok",
+    #     # "list" : openai.Model.list()
+    #     # 'res': response,
+    #     "model":json["model"], 
+    #     "choice_txt":json["choices"][0]['text']
+    # }
+    return {
+        "hello": "world"
+    }
+
+@app.get('/create')
+async def index():
     json = openai.Completion.create(
     model="text-davinci-002",
     prompt="The net worth of the richest footballer",
@@ -93,7 +114,6 @@ async def index():
     temperature=0
         )
 
-    # print(response['detail'])
     return {
         # "detail":"ok",
         # "list" : openai.Model.list()
@@ -101,7 +121,6 @@ async def index():
         "model":json["model"], 
         "choice_txt":json["choices"][0]['text']
     }
-
 
 @app.get('/edit')
 def correct_spelling():
