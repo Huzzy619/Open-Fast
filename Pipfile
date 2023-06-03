@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+openai = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+python-decouple = "*"
+sqlalchemy = "*"
+sqlmodel = "*"
+mailjet-rest = "*"
+jinja2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
